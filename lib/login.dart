@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'home_screen.dart';
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -12,6 +14,12 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController mobileNumberController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
+  @override
+  void dispose(){
+    super.dispose();
+    mobileNumberController.dispose();
+    passwordController.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,11 +91,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                   vertical: 8),
                               child: TextFormField(
                                 enabled: true,
-
                                 controller: passwordController,
                                 decoration: const InputDecoration(
                                 border:InputBorder.none,
-
                                   prefixIcon: Icon(Icons.lock),
                                   labelText: "Password",
                                   hintStyle: TextStyle(
@@ -113,7 +119,14 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ))),
                             SizedBox(height: 8.0),
                             ElevatedButton(
-                              onPressed: () => {},
+                              onPressed: () => {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => HomeScreen(),
+                                  ),
+                                ),
+                              },
                               child: Text("Login"),
                               style: ButtonStyle(
                                 backgroundColor:
@@ -132,7 +145,10 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                             SizedBox(height: 16.0),
                             ElevatedButton(
-                              onPressed: () => {},
+                              onPressed: () => {
+
+
+                            },
                               child: Text("Login with otp"),
                               style: ButtonStyle(
                                 backgroundColor:
