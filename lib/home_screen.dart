@@ -22,21 +22,25 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      body: Container(
-        child: ListView.builder(
-            itemCount: 2,
-            itemBuilder: (context, index) => Card(
-child: Column(
-  children: [
-    Image.asset("assets/bodyImage1.png"), // Replace with your image path
-    ListTile(
-      title: Text('Heading'),
-    ),
-
-  ],
-),
-        ))
-      ),
+  //     body: Column(
+  //       mainAxisAlignment: MainAxisAlignment.center,
+  //       children: [
+  //         ListView.builder(
+  //             itemCount: 1,
+  //             itemBuilder: (context, index) => Card(
+  //            child: Column(
+  //         children: [
+  //   Image.asset("assets/bodyImage1.png"), // Replace with your image path
+  //   ListTile(
+  //       title: Text('Heading'),
+  //
+  //   ),
+  //
+  // ],
+  // ),
+  //         )
+  //         ),
+  // ]),
     );
   }
 }
